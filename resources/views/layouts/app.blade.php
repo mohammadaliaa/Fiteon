@@ -42,7 +42,7 @@
                             <a href="{{ url('admin/posts') }}">posts  </a>
                             </ul>
                             <ul class="navbar-nav mx-3">
-                                    <a href="{{route('admin.articles.index') }}">articles  </a>
+                                    <a href="{{url('admin/articles') }}">articles  </a>
                                     </ul>
 
 
