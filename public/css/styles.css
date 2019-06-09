@@ -1,0 +1,17 @@
+.hero-image {
+    background-image: url('https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80');
+    background-color: #cccccc;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.navbar-light .navbar-brand {
+    background-image: url('/images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    width: 130px;
+    height: 20px;
+}
