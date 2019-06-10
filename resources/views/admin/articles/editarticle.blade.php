@@ -28,9 +28,17 @@
               <input type="text" class="form-control" name="article_title" value="{{$article->article_title}}"/>
           </div>
           <div class="form-group">
+            <label for="name">article title fa:</label>
+            <input type="text" class="form-control" name="article_title_fa" value="{{$article->article_title_fa}}"/>
+        </div>
+          <div class="form-group">
               <label for="price">des :</label>
               <input type="text" class="form-control" name="article_des" value="{{$article->article_des}}"/>
           </div>
+          <div class="form-group">
+            <label for="price">des fa:</label>
+            <input type="text" class="form-control" name="article_des_fa" value="{{$article->article_des_fa}}"/>
+        </div>
 
           <button type="submit" class="btn btn-primary">Update article</button>
       </form>

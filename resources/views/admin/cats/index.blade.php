@@ -7,7 +7,7 @@
   }
 </style>
 <div>
-    <a class="btn btn-primary" href="{{ url('admin/articles/create') }}">create article</a>
+    <a class="btn btn-primary" href="{{ url('admin/cats/create') }}">create cat</a>
 </div>
 <br>
 <div class="uper">
@@ -21,22 +21,20 @@
     <thead>
         <tr>
           <td>ID</td>
-          <td>article title</td>
-          <td>article des</td>
-
+          <td>cat title</td>
           <td colspan="2">Action</td>
         </tr>
     </thead>
     <tbody>
-        @foreach($articles as $article)
+        @foreach($cats as $cat)
         <tr>
-            <td>{{$article->id}}</td>
-            <td>{{$article->article_title}} <br> {{$article->article_title_fa}}  </td>
-            <td>{{$article->article_des}} <br> {{$article->article_des_fa}} </td>
+            <td>{{$cat->id}}</td>
+            <td>{{$cat->title}} <br> {{$cat->title_fa}}  </td>
 
-            <td><a href="{{ route('articles.edit',$article->id)}}" class="btn btn-primary">Edit</a></td>
+
+            <td><a href="{{ route('cats.edit',$cat->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
-                <form action="{{ route('articles.destroy', $article->id)}}" method="post">
+                <form action="{{ route('cats.destroy', $cat->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>

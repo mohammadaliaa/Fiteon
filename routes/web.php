@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('admin/articles', 'ArticleController');
+
 // Route::resource('products','ProductController');
 
 Route::get('/', function () {
@@ -72,15 +72,11 @@ Route::delete('/products','productController@destroy')->name('products.destroy')
 // end product
 
 // cats
-Route::post('cat', 'CatController@create')->name('cat.create');
-Route::get('admin/cats', 'CatController@list')->name('cat.list');
-Route::get('admin/cats/create', function () {
-    return view('admin.createcat');
-});
+Route::resource('admin/cats', 'CatController');
 // end cat
 
 
 //article
-
+Route::resource('admin/articles', 'ArticleController');
 //end article
 

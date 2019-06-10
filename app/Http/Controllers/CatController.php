@@ -3,110 +3,103 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
 use App\Cat;
-use View;
-
 class CatController extends Controller
 {
-    public function create(Request $request)
-    {
-        $this->validate(request(), [
-            'title' => 'required|unique:cats',
-
-        ]);
-
-        $cat = new Cat();
-        $cat->title = $request->title;
-        $cat->save();
-        // return response()->json(['status'=>'ok', 'message'=>$cat]);
-        return redirect()->route('cat.list',$cat);
-    }
-
-    public function get(Request $request)
-    {
-
-        $credentials = $request->only('cat_id');
-
-
-        $rules = [
-            'cat_id' => 'required',
-        ];
-        $validator = Validator::make($credentials, $rules);
-
-        if($validator->fails()) {
-
-            return response()->json(['status'=>'error', 'message'=>$validator->messages()]);
-        }
-
-        $cat = Cat::find($request->cat_id);
-
-        return response()->json(['status'=>'ok', 'message'=>$cat]);
-
-    }
-    public function list(Request $request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
         $cats = Cat::all();
-        // return $cats;
-        return View::make("admin/cats")->with(array('cats'=>$cats));
+
+        return view('admin/cats/index', compact('cats'));
     }
-    public function update(Request $request)
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-
-        $credentials = $request->only('cat_id','title');
-
-
-        $rules = [
-            'cat_id' => 'required',
-            'title' => 'required|max:255|unique:cats'
-        ];
-        $validator = Validator::make($credentials, $rules);
-
-        if($validator->fails()) {
-
-            return response()->json(['status'=>'error', 'message'=>$validator->messages()]);
-        }
-
-        $cat = Cat::find($request->cat_id);
-        $cat->title = $request ->title;
-        $cat->save();
-        return response()->json(['status'=>'ok', 'message'=>$cat]);
-
+        return view('admin/cats/createcat');
     }
-    public function delete(Request $request)
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        $credentials = $request->only('cat_id');
-        $rules = [
-            'cat_id' => 'required',
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'title_fa' => 'max:255',
 
-        ];
-        $validator = Validator::make($credentials, $rules);
 
-        if($validator->fails()) {
+        ]);
+        $cat = Cat::create($validatedData);
 
-            return response()->json(['status'=>'error', 'message'=>$validator->messages()]);
-        }
-        $cat = Cat::find($request->cat_id);
-        // $products = $cat->products;
-        // $products->delete();
+        return redirect('admin/cats')->with('success', 'cat is successfully saved');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $cat = Cat::findOrFail($id);
+
+        return view('admin/cats/editcat', compact('cat'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'title_fa' => 'max:255',
+        ]);
+        Cat::whereId($id)->update($validatedData);
+
+        return redirect('admin/cats')->with('success', 'cat is successfully updated');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $cat = Cat::findOrFail($id);
         $cat->delete();
-        return response()->json(['status'=>'ok', 'message'=>'deleted']);
-    }
 
-
-    public function getCatProducts(Request $request)
-    {
-        $credentials = $request->only('cat_id');
-        $rules = [
-            'cat_id' => 'required',
-        ];
-        $validator = Validator::make($credentials, $rules);
-
-        if($validator->fails()) {
-            return response()->json(['status'=>'error', 'message'=>$validator->messages()]);
-        }
-        $cat =Cat::find($request->cat_id);
-        $products = $cat->Products;
-        return response()->json(['status'=>'ok', 'message'=>$products]);
+        return redirect('admin/cats')->with('success', 'cat is successfully deleted');
     }
 }

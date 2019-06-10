@@ -16,6 +16,7 @@ class CreateCatsTable extends Migration
         Schema::create('cats', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('title_fa');
             $table->timestamps();
         });
     }

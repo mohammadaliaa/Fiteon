@@ -15,7 +15,7 @@ class ArticleController extends Controller
     {
         $articles = Article::all();
 
-        return view('admin.articles.index', compact('articles'));
+        return view('admin/articles/index', compact('articles'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.articles.createarticle');
+        return view('admin/articles/createarticle');
     }
 
     /**
@@ -39,11 +39,13 @@ class ArticleController extends Controller
         $validatedData = $request->validate([
             'article_title' => 'required|max:255',
             'article_des' => 'required',
+            'article_title_fa' => 'max:255',
+            'article_des_fa' => '',
 
         ]);
         $article = Article::create($validatedData);
 
-        return redirect('admin.articles.indexarticle')->with('success', 'article is successfully saved');
+        return redirect('admin/articles')->with('success', 'article is successfully saved');
     }
 
     /**
@@ -67,7 +69,7 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
 
-    return view('admin.articles.editarticle', compact('article'));
+    return view('admin/articles/editarticle', compact('article'));
     }
 
     /**
@@ -82,11 +84,13 @@ class ArticleController extends Controller
         $validatedData = $request->validate([
             'article_title' => 'required|max:255',
             'article_des' => 'required',
+            'article_title_fa' => 'max:255',
+            'article_des_fa' => '',
 
         ]);
         Article::whereId($id)->update($validatedData);
 
-        return redirect('admin.articles.indexarticle')->with('success', 'Book is successfully updated');
+        return redirect('admin/articles')->with('success', 'article is successfully updated');
     }
 
     /**
@@ -97,6 +101,9 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        $article->delete();
+
+        return redirect('admin/articles')->with('success', 'article is successfully deleted');
     }
 }
