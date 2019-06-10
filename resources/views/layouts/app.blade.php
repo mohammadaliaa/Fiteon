@@ -36,7 +36,7 @@
                     <a href="{{ url('admin/cats') }}">Categories  </a>
                     </ul>
                     <ul class="navbar-nav mx-3">
-                        <a href="{{ url('products') }}">products  </a>
+                        <a href="{{ url('admin/products') }}">products  </a>
                         </ul>
                         <ul class="navbar-nav mx-3">
                             <a href="{{ url('admin/posts') }}">posts  </a>

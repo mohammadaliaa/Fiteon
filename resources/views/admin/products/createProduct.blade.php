@@ -1,51 +1,58 @@
 @extends('layouts.app')
+
 @section('content')
-<h2>Add a product</h2>
-<form method="post" action="{{ route('product.create') }}" enctype="multipart/form-data">
-    @csrf
+<style>
+  .uper {
+    margin-top: 40px;
+  }
+</style>
+<div class="card uper">
+  <div class="card-header">
+    Add product
+  </div>
+  <div class="card-body">
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div><br />
+    @endif
+      <form method="post" action="{{ route('products.store') }}">
+          <div class="form-group">
+              @csrf
+              <label for="title">product title:</label>
+              <input type="text" required class="form-control" name="title"/>
+          </div>
+          <div class="form-group">
+            <label for="title">product title fa :</label>
+            <input type="text" required class="form-control" name="title_fa"/>
+        </div>
 
-@if(count($errors))
-            <div class="form-group">
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{$error}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        @endif
-    <div class="form-group row">
-        <label for="titleid" class="col-sm-3 col-form-label">p Title</label>
-        <div class="col-sm-9">
-            <input required="required" name="title" type="text" class="form-control" id="title" placeholder="p Title" value={{old('title') }}>
+          <div class="form-group">
+            <label for="title"> des :</label>
+            <input type="text" class="form-control" name="des"/>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="publisherid" class="col-sm-3 col-form-label">p des</label>
-        <div class="col-sm-9">
-            <input required="required" name="des" type="text" class="form-control" id="des" placeholder="p des" value={{old('des')}}
-                   >
+        <div class="form-group">
+            <label for="title"> des fa :</label>
+            <input type="text" class="form-control" name="des_fa"/>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="releasedateid" class="col-sm-3 col-form-label">cat id </label>
-        <div class="col-sm-9">
 
+        <div class="form-group">
+            <label>cat
+                <select name="cat_id" id="cat_id" class="form-control ">
+                    <option value=""></option>
+                    @foreach($cats as $cat)
+                       {{ $cat->title}}
+                    @endforeach
+                   </select>
+            </label>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="releasedateid" class="col-sm-3 col-form-label">img </label>
-        <div class="col-sm-9">
-            <input name="img" type="file" id="img"
-                    >
-        </div>
-    </div>
 
-    <div class="form-group row">
-        <div class="offset-sm-3 col-sm-9">
-            <button type="submit" class="btn btn-primary">Submit </button>
-        </div>
-    </div>
-</form>
+          <button type="submit" class="btn btn-primary">Create product</button>
+      </form>
+  </div>
+</div>
 @endsection

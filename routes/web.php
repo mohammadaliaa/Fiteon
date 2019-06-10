@@ -53,22 +53,7 @@ Route::group(['middleware'=>'language'],function ()
 
 
 // product
-Route::post('product', 'ProductController@create')->name('product.create');
-// Route::get('product', 'ProductController@list')->name('product.list');
-Route::get('/products', 'ProductController@list');
-
-// Route::get('/products', function () {
-//     return view('productsView');
-// });
-Route::get('/page', function () {
-    return view('page');
-});
-
-Route::get('admin/products/create', function () {
-    return view('admin.createproduct');
-});
-
-Route::delete('/products','productController@destroy')->name('products.destroy');
+Route::resource('admin/products', 'ProductController');
 // end product
 
 // cats
