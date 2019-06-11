@@ -20,7 +20,7 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
+
           <td>article title</td>
           <td>article des</td>
 
@@ -30,7 +30,7 @@
     <tbody>
         @foreach($articles as $article)
         <tr>
-            <td>{{$article->id}}</td>
+
             <td>{{$article->article_title}} <br> {{$article->article_title_fa}}  </td>
             <td>{{$article->article_des}} <br> {{$article->article_des_fa}} </td>
 

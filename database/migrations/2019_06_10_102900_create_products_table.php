@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('des_fa');
             $table->unsignedBigInteger('cat_id');
             $table->index('cat_id');
+            $table->string('image');
             $table->timestamps();
         });
     }

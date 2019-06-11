@@ -20,7 +20,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('products.store') }}">
+      <form  method="post" action="{{ route('products.store') }}" enctype="multipart/form-data">
           <div class="form-group">
               @csrf
               <label for="title">product title:</label>
@@ -39,13 +39,15 @@
             <label for="title"> des fa :</label>
             <input type="text" class="form-control" name="des_fa"/>
         </div>
-
+        <div class="form-group">
+                <label for="title"> image :</label>
+                <input type="file" id="image" name="image"/>
+            </div>
         <div class="form-group">
             <label>cat
                 <select name="cat_id" id="cat_id" class="form-control ">
-                    <option value=""></option>
                     @foreach($cats as $cat)
-                       {{ $cat->title}}
+                    <option value="{{ $cat->id}}"> {{ $cat->title}}</option>
                     @endforeach
                    </select>
             </label>

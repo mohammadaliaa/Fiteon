@@ -20,7 +20,7 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
+          <td>image</td>
           <td>product title</td>
           <td>product des</td>
           <td>product cat</td>
@@ -30,15 +30,15 @@
     <tbody>
         @foreach($products as $product)
         <tr>
-            <td>{{$product->id}}</td>
+        <td><img src="{{URL::to('/') }}/images/{{ $product->image }}" class="img-thumbnail" width="75"></td>
+
             <td>{{$product->title}} <br> {{$product->title_fa}}  </td>
             <td>{{$product->des}} <br> {{$product->des_fa}}  </td>
-            <td>{{$product->cat_id}}</td>
+            <td>{{$product->cat->title}}</td>
 
-
-            <td><a href="{{ route('admin/products/edit',$product->id)}}" class="btn btn-primary">Edit</a></td>
+            <td><a href="{{ route('products.edit',$product->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
-                <form action="{{ route('admin/products/destroy', $product->id)}}" method="post">
+                <form action="{{ route('products.destroy', $product->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>

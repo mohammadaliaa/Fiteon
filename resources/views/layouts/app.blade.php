@@ -39,7 +39,7 @@
                         <a href="{{ url('admin/products') }}">products  </a>
                         </ul>
                         <ul class="navbar-nav mx-3">
-                            <a href="{{ url('admin/posts') }}">posts  </a>
+                            <a href="{{ url('admin/projects') }}">projects  </a>
                             </ul>
                             <ul class="navbar-nav mx-3">
                                     <a href="{{url('admin/articles') }}">articles  </a>

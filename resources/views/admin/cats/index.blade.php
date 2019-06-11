@@ -20,7 +20,7 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
+
           <td>cat title</td>
           <td colspan="2">Action</td>
         </tr>
@@ -28,7 +28,7 @@
     <tbody>
         @foreach($cats as $cat)
         <tr>
-            <td>{{$cat->id}}</td>
+
             <td>{{$cat->title}} <br> {{$cat->title_fa}}  </td>
 
 
