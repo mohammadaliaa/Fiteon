@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Product;
-use App\Cat;
+use App\Project;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $projects = Project::all();
 
-        return view('admin/products/index', compact('products'));
+        return view('admin/projects/index', compact('projects'));
     }
 
     /**
@@ -26,9 +25,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $cats = Cat::all();
+          $project = Project::all();
 
-        return view('admin/products/createproduct',compact('cats'));
+        return view('admin/projects/createproject',compact('project'));
     }
 
     /**
@@ -44,7 +43,6 @@ class ProductController extends Controller
             'des' => 'required',
             'title_fa' => 'max:255',
             'des_fa' => '',
-            'cat_id' => '',
             'image' => 'image',
         ]);
         $image = $request->file('image');
@@ -55,11 +53,10 @@ class ProductController extends Controller
             'des' => $request->des,
             'title_fa' => $request->title_fa,
             'des_fa' => $request->des_fa,
-            'cat_id' => $request->cat_id,
             'image' => $new_name,
         );
-        Product::create($form_data);
-        return redirect('admin/products')->with('success', 'product is successfully saved');
+        Project::create($form_data);
+        return redirect('admin/projects')->with('success', 'project is successfully saved');
     }
 
     /**
@@ -81,9 +78,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
-        $cats = Cat::all();
-        return view('admin/products/editproduct', compact('product','cats'));
+        $project = Project::findOrFail($id);
+        return view('admin/projects/editproject', compact('project'));
     }
 
     /**
@@ -103,7 +99,6 @@ class ProductController extends Controller
                 'des' => 'required',
                 'title_fa' => 'max:255',
                 'des_fa' => '',
-                'cat_id' => '',
                 'image'=>'image',
             ]);
             $image_name = rand() . '.' . $image->
@@ -115,8 +110,6 @@ class ProductController extends Controller
                 'des' => 'required',
                 'title_fa' => 'max:255',
                 'des_fa' => '',
-                'cat_id' => '',
-
                 ]);
         }
         $form_data = array(
@@ -124,11 +117,11 @@ class ProductController extends Controller
             'des' => $request->des,
             'title_fa' => $request->title_fa,
             'des_fa' => $request->des_fa,
-            'cat_id' => $request->cat_id,
             'image' => $image_name,
         );
-        Product::whereId($id)->update($form_data);
-        return redirect('admin/products')->with('success', 'products is successfully updated');
+        Project::whereId($id)->update($form_data);
+        return redirect('admin/projects')->with('success', 'project is successfully updated');
+
     }
 
     /**
@@ -139,8 +132,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::findOrFail($id);
-        $product->delete();
-        return redirect('admin/products')->with('success', 'products is successfully deleted');
+        $project = Project::findOrFail($id);
+        $project->delete();
+        return redirect('admin/projects')->with('success', 'project is successfully deleted');
+
     }
 }

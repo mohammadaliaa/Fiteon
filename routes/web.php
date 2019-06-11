@@ -65,3 +65,6 @@ Route::resource('admin/cats', 'CatController');
 Route::resource('admin/articles', 'ArticleController');
 //end article
 
+//project
+Route::resource('admin/projects', 'ProjectController');
+//end project
