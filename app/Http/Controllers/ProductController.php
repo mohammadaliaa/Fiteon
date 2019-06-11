@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Product;
 use App\Cat;
-use App\Media;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -40,7 +39,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required|max:255',
             'des' => 'required',
             'title_fa' => 'max:255',
@@ -49,10 +48,17 @@ class ProductController extends Controller
             'image' => 'image',
         ]);
         $image = $request->file('image');
-        $new_name = rand() . '.' . $image->
-        getClientOriginalExtension();
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images'), $new_name);
-        Product::create($validatedData);
+        $form_data = array(
+            'title' => $request->title,
+            'des' => $request->des,
+            'title_fa' => $request->title_fa,
+            'des_fa' => $request->des_fa,
+            'cat_id' => $request->cat_id,
+            'image' => $new_name,
+        );
+        Product::create($form_data);
         return redirect('admin/products')->with('success', 'product is successfully saved');
     }
 
@@ -92,7 +98,7 @@ class ProductController extends Controller
         $image_name = $request->hidden_image;
         $image = $request->file('image');
         if($image != ''){
-            $validatedData = $request->validate([
+             $request->validate([
                 'title' => 'required|max:255',
                 'des' => 'required',
                 'title_fa' => 'max:255',
@@ -105,20 +111,26 @@ class ProductController extends Controller
             getClientOriginalExtension();
             $image->move(public_path('images'), $image_name);
         }else{
-            $validatedData = $request->validate([
+         $request->validate([
                 'title' => 'required|max:255',
                 'des' => 'required',
                 'title_fa' => 'max:255',
                 'des_fa' => '',
                 'cat_id' => '',
-                'image' => 'image',
+
                 ]);
-                Product::whereId($id)->update($validatedData);
-                return redirect('admin/products')->with('success', 'products is successfully updated');
         }
 
-
-
+        $form_data = array(
+            'title' => $request->title,
+            'des' => $request->des,
+            'title_fa' => $request->title_fa,
+            'des_fa' => $request->des_fa,
+            'cat_id' => $request->cat_id,
+            'image' => $image_name,
+        );
+        Product::whereId($id)->update($form_data);
+        return redirect('admin/products')->with('success', 'products is successfully updated');
     }
 
     /**
