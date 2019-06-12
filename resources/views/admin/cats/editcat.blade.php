@@ -25,11 +25,11 @@
               @csrf
               @method('PATCH')
               <label for="name">cat title:</label>
-              <input type="text" class="form-control" name="title" value="{{$cat->title}}"/>
+              <input type="text" required class="form-control" name="title" value="{{$cat->title}}"/>
           </div>
           <div class="form-group">
             <label for="name">title fa:</label>
-            <input type="text" class="form-control" name="title_fa" value="{{$cat->title_fa}}"/>
+            <input type="text" required class="form-control" name="title_fa" value="{{$cat->title_fa}}"/>
         </div>
 
           <button type="submit" class="btn btn-primary">Update cat</button>

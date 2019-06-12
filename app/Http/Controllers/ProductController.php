@@ -43,9 +43,9 @@ class ProductController extends Controller
             'title' => 'required|max:255',
             'des' => 'required',
             'title_fa' => 'max:255',
-            'des_fa' => '',
-            'cat_id' => '',
-            'image' => 'image',
+            'des_fa' => 'required',
+            'cat_id' => 'required',
+            'image' => 'required|image',
         ]);
         $image = $request->file('image');
         $new_name = rand() . '.' . $image->getClientOriginalExtension();

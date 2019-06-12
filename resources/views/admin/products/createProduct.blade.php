@@ -24,7 +24,7 @@
           <div class="form-group">
               @csrf
               <label for="title">product title:</label>
-              <input type="text" required class="form-control" name="title"/>
+              <input type="text" required required class="form-control" name="title"/>
           </div>
           <div class="form-group">
             <label for="title">product title fa :</label>
@@ -33,15 +33,15 @@
 
           <div class="form-group">
             <label for="title"> des :</label>
-            <input type="text" class="form-control" name="des"/>
+            <input type="text" required class="form-control" name="des"/>
         </div>
         <div class="form-group">
             <label for="title"> des fa :</label>
-            <input type="text" class="form-control" name="des_fa"/>
+            <input type="text" required class="form-control" name="des_fa"/>
         </div>
         <div class="form-group">
                 <label for="title"> image :</label>
-                <input type="file" id="image" name="image"/>
+                <input type="file" required id="image" name="image"/>
             </div>
         <div class="form-group">
             <label>cat

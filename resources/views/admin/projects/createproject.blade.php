@@ -24,23 +24,23 @@
           <div class="form-group">
               @csrf
               <label for="name">Project Name:</label>
-              <input type="text" class="form-control" name="title"/>
+              <input type="text" required class="form-control" name="title"/>
           </div>
           <div class="form-group">
                 <label for="name">Project Name fa:</label>
-                <input type="text" class="form-control" name="title_fa"/>
+                <input type="text" required class="form-control" name="title_fa"/>
             </div>
           <div class="form-group">
               <label for="price">Project des :</label>
-              <input type="text" class="form-control" name="des"/>
+              <input type="text" required class="form-control" name="des"/>
           </div>
           <div class="form-group">
               <label for="price">Project des fa:</label>
-              <input type="text" class="form-control" name="des_fa"/>
+              <input type="text" required class="form-control" name="des_fa"/>
           </div>
           <div class="form-group">
                 <label for="title"> image :</label>
-                <input type="file" id="image" name="image"/>
+                <input type="file" required id="image" name="image"/>
             </div>
           <button type="submit" class="btn btn-primary">Create Project</button>
       </form>

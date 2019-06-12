@@ -29,15 +29,15 @@
           <div class="form-group">
 
             <label for="title">article title fa:</label>
-            <input type="text" class="form-control" name="article_title_fa"/>
+            <input type="text" required class="form-control" name="article_title_fa"/>
         </div>
           <div class="form-group">
               <label for="des">article des :</label>
-              <input type="text" required class="form-control" name="article_des"/>
+              <input type="text"  required class="form-control" name="article_des"/>
           </div>
           <div class="form-group">
             <label for="des">article des fa :</label>
-            <input type="text" class="form-control" name="article_des_fa"/>
+            <input type="text" required class="form-control" name="article_des_fa"/>
         </div>
           <button type="submit" class="btn btn-primary">Create article</button>
       </form>

@@ -29,7 +29,7 @@
           <div class="form-group">
 
             <label for="title"> title fa:</label>
-            <input type="text" class="form-control" name="title_fa"/>
+            <input type="text" required class="form-control" name="title_fa"/>
         </div>
           <button type="submit" class="btn btn-primary">Create cat</button>
       </form>

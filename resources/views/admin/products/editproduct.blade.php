@@ -25,23 +25,23 @@
               @csrf
               @method('PATCH')
               <label for="name">product title:</label>
-              <input type="text" class="form-control" name="title" value="{{$product->title}}"/>
+              <input type="text" required class="form-control" name="title" value="{{$product->title}}"/>
           </div>
           <div class="form-group">
             <label for="name">title fa:</label>
-            <input type="text" class="form-control" name="title_fa" value="{{$product->title_fa}}"/>
+            <input type="text" required class="form-control" name="title_fa" value="{{$product->title_fa}}"/>
         </div>
         <div class="form-group">
             <label for="name">des :</label>
-            <input type="text" class="form-control" name="des" value="{{$product->des}}"/>
+            <input type="text" required class="form-control" name="des" value="{{$product->des}}"/>
         </div>
         <div class="form-group">
             <label for="name">des fa:</label>
-            <input type="text" class="form-control" name="des_fa" value="{{$product->des_fa}}"/>
+            <input type="text" required class="form-control" name="des_fa" value="{{$product->des_fa}}"/>
         </div>
         <div class="form-group">
                 <label for="name">image:</label>
-                <input type="file"  name="image"/>
+                <input type="file"   name="image"/>
                <img src="{{ URL::to('/') }}/images/{{ $product->image }}"
                      class="img-thumbnail" width="100">
                 <input type="hidden" name="hidden_image" value="{{$product->image}}">

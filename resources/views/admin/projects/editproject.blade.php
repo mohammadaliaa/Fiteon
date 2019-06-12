@@ -25,19 +25,19 @@
               @csrf
               @method('PATCH')
               <label for="name">project title:</label>
-              <input type="text" class="form-control" name="title" value="{{$project->title}}"/>
+              <input type="text" class="form-control" required name="title" value="{{$project->title}}"/>
           </div>
           <div class="form-group">
             <label for="name">title fa:</label>
-            <input type="text" class="form-control" name="title_fa" value="{{$project->title_fa}}"/>
+            <input type="text" class="form-control" required name="title_fa" value="{{$project->title_fa}}"/>
         </div>
         <div class="form-group">
             <label for="name">des :</label>
-            <input type="text" class="form-control" name="des" value="{{$project->des}}"/>
+            <input type="text" class="form-control" required name="des" value="{{$project->des}}"/>
         </div>
         <div class="form-group">
             <label for="name">des fa:</label>
-            <input type="text" class="form-control" name="des_fa" value="{{$project->des_fa}}"/>
+            <input type="text" class="form-control" required name="des_fa" value="{{$project->des_fa}}"/>
         </div>
         <div class="form-group">
                 <label for="name">image:</label>

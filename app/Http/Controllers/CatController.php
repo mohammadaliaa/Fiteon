@@ -38,7 +38,7 @@ class CatController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'title_fa' => 'max:255',
+            'title_fa' => 'required|max:255',
 
 
         ]);
@@ -82,7 +82,7 @@ class CatController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'title_fa' => 'max:255',
+            'title_fa' => 'required|max:255',
         ]);
         Cat::whereId($id)->update($validatedData);
 
