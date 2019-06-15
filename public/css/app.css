@@ -10662,3 +10662,12 @@ a.text-dark:focus {
   }
 }
 
+.btnlink{
+    background-color: transparent;
+    color: black;
+    border: solid;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 8px;
+    border-width: 0.99px;
+}
