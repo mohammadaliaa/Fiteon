@@ -7,7 +7,43 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.hero-image {
+    background-image: url('/images/back.jpeg');
+    background-color: #cccccc;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.navbar-light .navbar-brand {
+    background-image: url('/images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    width: 130px;
+    height: 20px;
+}
 
+.btnlink {
+    background-color: transparent;
+    color: black;
+    border: solid;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 8px;
+    border-width: 3px;
+    font-size: small;
+}
 
+.div_cats {
+    padding-top: 8px;
+    background-color: white;
+    border-radius: 10px;
+}
 
-
+.pheader{
+    background-image: url('/images/back.jpeg');
+    background-size:cover;
+    height: 250px;
+}
