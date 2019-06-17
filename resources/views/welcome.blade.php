@@ -54,14 +54,51 @@
 
                         @endif
                     </div>
+                    <br />
+                    <br />
+                    <br />
                     <div class="row">
                         <div
                             class="card "
                             style=" margin: auto;
-                            width: 50%; opacity: 0.9; background-color: #00000025"
+                            width: 50%; opacity: 0.9;
+                            background-color: transparent ;
+                            min-width: 450px; border-color: transparent"
                         >
-                            <div class="card-body"></div>
+                            <div class="card-body text-center">
+                                <h1 class="text-white"><b>Fiteon </b></h1>
+                                <div class="text-center" style="display: inline-flex;">
+                                    <a href="#" class="text-dark" >
+                                        <div class="lbtn">
+                                            asdsadasd
+                                        </div>
+                                    </a>
+                                    &nbsp; &nbsp; &nbsp;
+                                    <a href="#" class="text-white">
+                                        <div class="rbtn">
+                                            asdsadasd
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <div
+                    style=" position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+opacity: 0.9;
+     background-color: #00000025 ;
+
+color: white;
+text-align: center;"
+                >
+                    <div class="row">
+                        <div class="col-md-4">s</div>
+                        <div class="col-md-4">&copy; 2019 Copyright : Fiteon.ir</div>
+                        <div class="col-md-4">s</div>
                     </div>
                 </div>
             </div>
