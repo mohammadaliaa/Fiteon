@@ -85,17 +85,7 @@
                         </div>
                     </div>
                 </div>
-                <div
-                    style=" position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-opacity: 0.9;
-     background-color: #00000025 ;
-
-color: white;
-text-align: center;"
-                >
+                <div class="ftr">
                     <div class="row">
                         <div class="col-md-4">s</div>
                         <div class="col-md-4">&copy; 2019 Copyright : Fiteon.ir</div>
