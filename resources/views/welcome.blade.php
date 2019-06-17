@@ -67,8 +67,9 @@
                         >
                             <div class="card-body text-center">
                                 <h1 class="text-white"><b>Fiteon </b></h1>
+                                <br />
                                 <div class="text-center" style="display: inline-flex;">
-                                    <a href="#" class="text-dark" >
+                                    <a href="#" class="text-dark" style="text-decoration: none">
                                         <div class="lbtn">
                                             asdsadasd
                                         </div>
