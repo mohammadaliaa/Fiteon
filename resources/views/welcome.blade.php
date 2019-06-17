@@ -9,6 +9,9 @@
         <script src="/js/app.js"></script>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" />
+
+        {{-- font awesome --}}
+        <script src="https://kit.fontawesome.com/238c528f06.js"></script>
         {{-- bootstrap --}}
         {{--
         <script
@@ -46,12 +49,10 @@
                             <a href="{{ url('/home') }}">Home</a>
                             @else
                             <a href="{{ route('login') }}">Login</a>
-
                             @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                             @endif @endauth
                         </div>
-
                         @endif
                     </div>
                     <br />
@@ -87,9 +88,9 @@
                 </div>
                 <div class="ftr">
                     <div class="row">
-                        <div class="col-md-4">s</div>
-                        <div class="col-md-4">&copy; 2019 Copyright : Fiteon.ir</div>
-                        <div class="col-md-4">s</div>
+                        <div class="col-sm-4"> <i class="fas fa-phone-square-alt"></i> 02126400130</div>
+                        <div class="col-sm-4">&copy; 2019 Copyright : Fiteon.ir</div>
+                        <div class="col-sm-4"><i class="fas fa-envelope-square"></i> info@fiteon.ir</div>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cat;
+use App\Product;
 class CatController extends Controller
 {
     /**
@@ -16,6 +17,18 @@ class CatController extends Controller
         $cats = Cat::all();
 
         return view('admin/cats/index', compact('cats'));
+    }
+    public function indexview($cat_id)
+    {
+        $cats = Cat::all();
+        $products;
+        if ($cat_id == null){
+            $products = Product::all();
+
+        }else{
+            $products = Cat::find($cat_id)->products;
+        }
+        return view('productsView', compact('cats','products'));
     }
 
     /**

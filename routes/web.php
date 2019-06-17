@@ -38,9 +38,9 @@ Route::get('about', function () {
 Route::get('contact', function () {
     return view('contactusView');
 });
-Route::get('/projects', function () {
-    return view('projectsView');
-});
+// Route::get('/projects', function () {
+//     return view('projectsView');
+// });
 Route::get('/page/{lang}', function ($lang) {
     App::setlocale($lang);
     return view('page');
@@ -71,3 +71,7 @@ Route::resource('admin/articles', 'ArticleController');
 //project
 Route::resource('admin/projects', 'ProjectController');
 //end project
+
+
+Route::get('products', 'CatController@indexview');
+
