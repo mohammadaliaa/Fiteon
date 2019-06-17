@@ -12,7 +12,7 @@
                 @foreach ($cats as $cat)
                 <li>
 
-                    <h3> <a href="CatController@indexview({{$cat->id}})">  {{$cat->title}}  </a></h3>
+                    <h3> <a href="/cats/{{$cat->id}}">  {{$cat->title}}  </a></h3>
                 </li>
                 @endforeach
             </ul>
