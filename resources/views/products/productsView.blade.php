@@ -11,7 +11,6 @@
             <ul>
                 @foreach ($cats as $cat)
                 <li>
-
                     <h3> <a href="/cats/{{$cat->id}}">  {{$cat->title}}  </a></h3>
                 </li>
                 @endforeach
@@ -29,7 +28,7 @@
                                     {{$product->des}}
                             </p>
                             <div class="text-center">
-                                <a href="#" style="text-decoration: none" class="btnlink">Details</a>
+                            <a href="products/show/{{$product->id}}" style="text-decoration: none" class="btnlink">Details</a>
                             </div>
                         </div>
                     </div>

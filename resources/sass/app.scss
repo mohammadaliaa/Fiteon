@@ -68,7 +68,7 @@
     text-decoration: none;
     min-width: 200px;
 }
-.rbtn:hover{
+.rbtn:hover {
     border: solid;
     border-radius: 25px;
     padding: 8px;
@@ -81,12 +81,27 @@
     min-width: 200px;
 }
 
-
-.lbtn{
+.lbtn {
     text-decoration: none;
-    border: solid;border-radius: 25px;padding: 8px;border-width: 3px;font-size: small;; background-color: white; border-color: white;text-decoration: none; font-weight: bold;min-width: 200px;
+    border: solid;
+    border-radius: 25px;
+    padding: 8px;
+    border-width: 3px;
+    font-size: small;
+    background-color: white;
+    border-color: white;
+    text-decoration: none;
+    font-weight: bold;
+    min-width: 200px;
 }
 
-.ftr{
-    position: fixed;left: 0;bottom: 0;width: 100%;opacity: 0.9;background-color: #00000025 ;color: white;text-align: center;
+.ftr {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.9;
+    background-color: #00000025;
+    color: white;
+    text-align: center;
 }

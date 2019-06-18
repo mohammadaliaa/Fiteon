@@ -32,7 +32,7 @@ Route::get('services', function () {
 Route::get('products', function () {
     $cats = \App\Cat::all();
     $products = \App\Product::all();
-    return view('productsView', compact('cats', 'products'));
+    return view('products.productsView', compact('cats', 'products'));
 });
 Route::get('about', function () {
     return view('aboutusView');
@@ -75,5 +75,6 @@ Route::resource('admin/projects', 'ProjectController');
 //end project
 
 
-Route::get('cats/{cat_id}', 'CatController@indexview');
+Route::get('cats/{cat_id}', 'CatController@show');
+Route::get('products/show/{product_id}', 'ProductController@show');
 

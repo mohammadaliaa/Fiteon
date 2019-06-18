@@ -18,13 +18,7 @@ class ProductController extends Controller
 
         return view('admin/products/index', compact('products'));
     }
-    // public function indexView()
-    // {
-    //     $products = Product::all();
-    //     return view('productsView', compact('products');
-    // }
-
-    /**
+     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -75,7 +69,10 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+          $product = Product::find($id);
+        //   return View::make('products/show')
+        //       ->with('product', $product);
+              return view('products.show', compact('product'));
     }
 
     /**

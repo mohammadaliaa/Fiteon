@@ -18,18 +18,10 @@ class CatController extends Controller
 
         return view('admin/cats/index', compact('cats'));
     }
-    public function indexview($cat_id)
-    {
-        $cats = Cat::all();
-        $products;
-        if ($cat_id == null){
-            $products = Product::all();
+    // public function indexview($cat_id)
+    // {
 
-        }else{
-            $products = Cat::find($cat_id)->products;
-        }
-        return view('productsView', compact('cats','products'));
-    }
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -52,8 +44,6 @@ class CatController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'title_fa' => 'required|max:255',
-
-
         ]);
         $cat = Cat::create($validatedData);
 
@@ -66,9 +56,17 @@ class CatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($cat_id)
     {
-        //
+        $cats = Cat::all();
+        $products;
+        if ($cat_id == null){
+            $products = Product::all();
+
+        }else{
+            $products = Cat::find($cat_id)->products;
+        }
+        return view('products.productsView', compact('cats','products'));
     }
 
     /**
