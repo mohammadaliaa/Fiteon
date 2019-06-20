@@ -1,15 +1,15 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Fiteon</title>
-  @include('script')
+  @include('layouts.script')
     </head>
     <body>
         <div>
             <div class="hero-image">
-                @include('navbar')
+                @include('layouts.navbar')
                 <div class="container">
                     <div class="text-center">
                         @if (Route::has('login'))
@@ -55,13 +55,7 @@ s<!DOCTYPE html>
                         </div>
                     </div>
                 </div>
-                <div class="ftr">
-                    <div class="row">
-                        <div class="col-sm-4"> <i class="fas fa-phone-square-alt"></i> 02126400130</div>
-                        <div class="col-sm-4">&copy; 2019 Copyright : Fiteon.ir</div>
-                        <div class="col-sm-4"><i class="fas fa-envelope-square"></i> info@fiteon.ir</div>
-                    </div>
-                </div>
+              @include('layouts.footer')
             </div>
         </div>
     </body>
