@@ -6,17 +6,15 @@
     margin-top: 40px;
   }
 </style>
-<div>
+<div class="ml-5">
     <a class="btn btn-primary" href="{{ url('admin/products/create') }}">create product</a>
 </div>
-<br>
 <div class="uper">
   @if(session()->get('success'))
     <div class="alert alert-success">
       {{ session()->get('success') }}
     </div><br />
   @endif
-
   <table class="table table-striped">
     <thead>
         <tr>

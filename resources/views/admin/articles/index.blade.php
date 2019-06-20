@@ -6,7 +6,7 @@
     margin-top: 40px;
   }
 </style>
-<div>
+<div class="ml-5">
     <a class="btn btn-primary" href="{{ url('admin/articles/create') }}">create article</a>
 </div>
 <br>
