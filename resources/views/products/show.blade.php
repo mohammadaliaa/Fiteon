@@ -1,22 +1,17 @@
+@include('layouts.script') @include('layouts.navbar')
 <div class="container">
-
-    <nav class="navbar navbar-inverse">
-        <div class="navbar-header">
-
-        </div>
-        <ul class="nav navbar-nav">
-
-        </ul>
-    </nav>
-
-    <h1>Showing {{ $product->title }}</h1>
-
-        <div class="jumbotron text-center">
-            <h2>{{ $product->title }}</h2>
-            <p>
-                <strong>Email:</strong> {{ $product->des }}<br>
-
-            </p>
-        </div>
-
+    <div class="text-center">
+        <img class="pimage" src="/images/{{$product->image}}" alt="" />
     </div>
+</div>
+<br />
+<h1 class="px10" class="font-weight-bold">{{ $product->title }}</h1>
+<br />
+<div class="">
+    <div class="card" style="height:auto;">
+        <br />
+        <div class="px10">
+            {!!html_entity_decode($product->des)!!}
+        </div>
+    </div>
+</div>
