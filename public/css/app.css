@@ -10677,8 +10677,8 @@ a.text-dark:focus {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80%;
-  width: 130px;
-  height: 20px;
+  width: 215px;
+  height: 50px;
 }
 
 .btnlink {
@@ -10688,7 +10688,7 @@ a.text-dark:focus {
   border-radius: 25px;
   text-decoration: none;
   padding: 8px;
-  border-width: 3px;
+  border-width: 1px;
   font-size: small;
 }
 
@@ -10760,5 +10760,27 @@ a.text-dark:focus {
   background-color: #00000025;
   color: white;
   text-align: center;
+}
+
+.with_p_prod {
+  width: 700px;
+}
+
+.pimage {
+  height: 20rem;
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.px10 {
+  padding-left: 18%;
+  padding-right: 18%;
+}
+
+.dots {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
