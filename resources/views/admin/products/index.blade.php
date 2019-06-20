@@ -33,7 +33,7 @@
         <td><img src="{{URL::to('/') }}/images/{{ $product->image }}" class="img-thumbnail" width="75"></td>
 
             <td>{{$product->title}} <br> {{$product->title_fa}}  </td>
-            <td>{{$product->des}} <br> {{$product->des_fa}}  </td>
+            <td  > <p class="dots with_p_prod" > {{$product->des}} </p>  <br> <p class="dots with_p_prod" > {{$product->des_fa}}</p>   </td>
             <td>{{$product->cat->title}}</td>
 
             <td><a href="{{ route('products.edit',$product->id)}}" class="btn btn-primary">Edit</a></td>

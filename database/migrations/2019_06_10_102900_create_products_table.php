@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('title_fa');
-            $table->string('des');
-            $table->string('des_fa');
+            $table->longText('des');
+            $table->longText('des_fa');
             $table->unsignedBigInteger('cat_id');
             $table->index('cat_id');
             $table->string('image');
