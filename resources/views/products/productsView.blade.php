@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@include('layouts.script')
 <div class="header pheader">
-    @include('navbar')
+    @include('layouts.navbar')
 </div>
 <br />
 <div class="container-fluid">
@@ -24,8 +24,8 @@
                         <img src="/images/{{$product->image}}" height="400vh" class="card-img-top" />
                         <div class="card-body">
                             <h5 class="card-title"> {{$product->title}}</h5>
-                            <p class="card-text">
-                                    {{$product->des}}
+                            <p class="card-text dots" >
+                                    {{-- {!!html_entity_decode($product->des)!!} --}}
                             </p>
                             <div class="text-center">
                             <a href="products/show/{{$product->id}}" style="text-decoration: none" class="btnlink">Details</a>
@@ -39,3 +39,5 @@
         </div>
     </div>
 </div>
+<br>
+{{-- @include('layouts.footer') --}}
