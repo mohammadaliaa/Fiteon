@@ -20,7 +20,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('projects.update', $project->id) }}" enctype="multipart/form-data">
+      <form id="form" method="post" action="{{ route('projects.update', $project->id) }}" enctype="multipart/form-data">
           <div class="form-group">
               @csrf
               @method('PATCH')
@@ -33,11 +33,15 @@
         </div>
         <div class="form-group">
             <label for="name">des :</label>
-            <input type="text" class="form-control" required name="des" value="{{$project->des}}"/>
+            <input name="des" type="hidden">
+            <div id="summernote"> </div>
+            {{-- <input type="text" class="form-control" required name="des" value="{{$project->des}}"/> --}}
         </div>
         <div class="form-group">
             <label for="name">des fa:</label>
-            <input type="text" class="form-control" required name="des_fa" value="{{$project->des_fa}}"/>
+            {{-- <input type="text" class="form-control" required name="des_fa" value="{{$project->des_fa}}"/> --}}
+            <input name="des_fa" type="hidden">
+            <div id="summernote_fa"> </div>
         </div>
         <div class="form-group">
                 <label for="name">image:</label>
@@ -51,4 +55,39 @@
       </form>
   </div>
 </div>
+<script>
+    var toolbarOptions = [
+      ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+      ['blockquote', 'code-block'],
+      [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+      [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+      [{ 'direction': 'rtl' }],                         // text direction
+      [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+      [{ 'font': [] }],
+      [{ 'align': [] }],
+      ['clean']                                         // remove formatting button
+    ];
+    var options = {
+        modules: { toolbar: toolbarOptions },
+      placeholder: 'Waiting for your precious content',
+      theme: 'snow'
+    };
+    var editor = new Quill('#summernote', options);
+    editor.root.innerHTML =  '{!!html_entity_decode($product->des)!!} ';
+    var editor_fa = new Quill('#summernote_fa', options);
+    editor_fa.root.innerHTML =  '{!!html_entity_decode($product->des_fa)!!} ';
+    var form = document.getElementById("form"); // get form by ID
+    form.onsubmit = function() { // onsubmit do this first
+        var des = document.querySelector('input[name=des]'); // set name input var
+        var des_fa = document.querySelector('input[name=des_fa]'); // set name input var
+        des.value =  editor.root.innerHTML;
+        des_fa.value =  editor_fa.root.innerHTML;
+        return true; // submit form
+    }
+    </script>
+
 @endsection

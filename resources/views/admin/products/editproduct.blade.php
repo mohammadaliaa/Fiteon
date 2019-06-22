@@ -21,6 +21,15 @@
       </div><br />
     @endif
       <form id="form" method="post" action="{{ route('products.update', $product->id) }}" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Category :
+                <select name="cat_id" id="cat_id" class="form-control " >
+                    @foreach($cats as $cat)
+                    <option value="{{ $cat->id}}"> {{ $cat->title}}</option>
+                    @endforeach
+                   </select>
+            </label>
+        </div>
           <div class="form-group">
               @csrf
               @method('PATCH')
@@ -51,15 +60,7 @@
                 <input type="hidden" name="hidden_image" value="{{$product->image}}">
             </div>
 
-        <div class="form-group">
-            <label>cat
-                <select name="cat_id" id="cat_id" class="form-control " >
-                    @foreach($cats as $cat)
-                    <option value="{{ $cat->id}}"> {{ $cat->title}}</option>
-                    @endforeach
-                   </select>
-            </label>
-        </div>
+
           <button type="submit" class="btn btn-primary">Update cat</button>
       </form>
   </div>

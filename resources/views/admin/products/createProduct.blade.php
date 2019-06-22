@@ -21,6 +21,15 @@
       </div><br />
     @endif
       <form id="form" method="post" action="{{ route('products.store') }}" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Category :
+                <select name="cat_id" id="cat_id" class="form-control ">
+                    @foreach($cats as $cat)
+                    <option value="{{ $cat->id}}"> {{ $cat->title}}</option>
+                    @endforeach
+                   </select>
+            </label>
+        </div>
           <div class="form-group">
               @csrf
               <label for="title">product title:</label>
@@ -50,15 +59,7 @@
                 <label for="title"> image :</label>
                 <input type="file" required id="image" name="image"/>
             </div>
-        <div class="form-group">
-            <label>cat
-                <select name="cat_id" id="cat_id" class="form-control ">
-                    @foreach($cats as $cat)
-                    <option value="{{ $cat->id}}"> {{ $cat->title}}</option>
-                    @endforeach
-                   </select>
-            </label>
-        </div>
+
           <button type="submit" class="btn btn-primary">Create product</button>
       </form>
   </div>
