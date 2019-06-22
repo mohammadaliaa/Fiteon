@@ -29,10 +29,10 @@
     <tbody>
         @foreach($projects as $project)
         <tr>
-        <td><img src="{{URL::to('/') }}/images/{{ $project->image }}" class="img-thumbnail" width="75"></td>
+        <td><img src="{{URL::to('/') }}/images/{{ $project->image }}" class="img-thumbnail lists_images"></td>
 
             <td>{{$project->title}} <br> {{$project->title_fa}}  </td>
-            <td>{{$project->des}} <br> {{$project->des_fa}}  </td>
+            <td>  <pre class="dots with_p_prod"> {!!$project->des!!}</pre>   <br> <pre class="dots with_p_prod"> {!!$project->des_fa!!} </pre>  </td>
 
             <td><a href="{{ route('projects.edit',$project->id)}}" class="btn btn-primary">Edit</a></td>
             <td>

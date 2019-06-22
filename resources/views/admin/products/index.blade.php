@@ -28,7 +28,7 @@
     <tbody>
         @foreach($products as $product)
         <tr>
-        <td><img src="{{URL::to('/') }}/images/{{ $product->image }}" class="img-thumbnail" style="width: 150px"></td>
+        <td><img src="{{URL::to('/') }}/images/{{ $product->image }}" class="img-thumbnail lists_images" ></td>
 
             <td>{{$product->title}} <br> {{$product->title_fa}}  </td>
             <td  > <pre class="dots with_p_prod" >  {!!$product->des!!} </pre>  <br> <pre class="dots with_p_prod" >  {!!html_entity_decode($product->des_fa)!!}</pre>   </td>
