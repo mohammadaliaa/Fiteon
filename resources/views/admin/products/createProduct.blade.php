@@ -35,7 +35,7 @@
             <label for="title"> des :</label>
             {{-- <input type="text" required class="form-control" name="des"/> --}}
             {{-- <textarea id="summernote" name="des"  form="form" ></textarea> --}}
-            <input name="des" type="hidden">
+            <input name="des"  type="hidden">
             <div id="summernote"> </div>
 
         </div>
@@ -43,7 +43,7 @@
             <label for="title"> des fa :</label>
             {{-- <input type="text" required class="form-control" name="des_fa"/> --}}
             {{-- <textarea id="summernote_fa" name="des_fa"  form="form" ></textarea> --}}
-            <input name="des_fa" type="hidden">
+            <input name="des_fa"  type="hidden">
             <div id="summernote_fa"> </div>
         </div>
         <div class="form-group">
@@ -59,7 +59,6 @@
                    </select>
             </label>
         </div>
-
           <button type="submit" class="btn btn-primary">Create product</button>
       </form>
   </div>

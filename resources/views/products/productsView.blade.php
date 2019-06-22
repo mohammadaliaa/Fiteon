@@ -6,12 +6,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3 div_cats">
-            <h1>Products</h1>
+            <h1 class="text-center">Categories</h1>
             <hr />
             <ul>
                 @foreach ($cats as $cat)
                 <li>
-                    <h3> <a href="/cats/{{$cat->id}}">  {{$cat->title}}  </a></h3>
+                    <h3> <a class="nav-link" href="/cats/{{$cat->id}}">  {{$cat->title}}  </a></h3>
                 </li>
                 @endforeach
             </ul>
@@ -28,7 +28,7 @@
                                     {{-- {!!html_entity_decode($product->des)!!} --}}
                             </p>
                             <div class="text-center">
-                            <a href="products/show/{{$product->id}}" style="text-decoration: none" class="btnlink">Details</a>
+                            <a href="/products/show/{{$product->id}}" style="text-decoration: none" class="btnlink">Details</a>
                             </div>
                         </div>
                     </div>

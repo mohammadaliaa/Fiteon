@@ -33,9 +33,9 @@
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" href="{{ url('products') }}"><b> Products</b></a>
                 </li>
-                <li class="nav-item" role="presentation">
+                {{-- <li class="nav-item" role="presentation">
                     <a class="nav-link" href="{{ url('services') }}"><b>Services</b></a>
-                </li>
+                </li> --}}
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" href="{{ url('projects') }}"><b>Projects</b></a>
                 </li>

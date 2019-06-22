@@ -8,9 +8,9 @@
 <h1 class="px10" class="font-weight-bold">{{ $product->title }}</h1>
 <br />
 <div class="">
-    <div class="card" style="height:auto;">
+    <div class="card" style="margin: auto;border-color: transparent;width: 80%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <br />
-        <div class="px10">
+        <div class="px-5">
             {!!html_entity_decode($product->des)!!}
         </div>
     </div>
