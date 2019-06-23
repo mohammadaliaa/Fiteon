@@ -10763,6 +10763,7 @@ a.text-dark:focus {
 }
 
 .with_p_prod {
+  max-height: 4rem;
   width: 700px;
   display: flex;
 }

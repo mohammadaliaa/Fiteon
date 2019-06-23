@@ -58,7 +58,7 @@
 <script>
     var toolbarOptions = [
       ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-      ['blockquote', 'code-block'],
+      ['blockquote', 'code-block','image','link'],
       [{ 'header': 1 }, { 'header': 2 }],               // custom button values
       [{ 'list': 'ordered'}, { 'list': 'bullet' }],
       [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
@@ -77,9 +77,9 @@
       theme: 'snow'
     };
     var editor = new Quill('#summernote', options);
-    editor.root.innerHTML =  '{!!html_entity_decode($product->des)!!} ';
+    editor.root.innerHTML =  '{!!html_entity_decode($project->des)!!} ';
     var editor_fa = new Quill('#summernote_fa', options);
-    editor_fa.root.innerHTML =  '{!!html_entity_decode($product->des_fa)!!} ';
+    editor_fa.root.innerHTML =  '{!!html_entity_decode($project->des_fa)!!} ';
     var form = document.getElementById("form"); // get form by ID
     form.onsubmit = function() { // onsubmit do this first
         var des = document.querySelector('input[name=des]'); // set name input var
