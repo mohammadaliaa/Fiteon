@@ -24,7 +24,8 @@ Route::get('admin/posts', function () {
     return view('admin.posts');
 });
 Route::get('articles', function () {
-    return view('articlesView');
+    $articles = \App\Article::all();
+    return view('articles.articlesView',compact('articles'));
 });
 Route::get('services', function () {
     return view('servicesView');
@@ -77,4 +78,5 @@ Route::resource('admin/projects', 'ProjectController');
 
 Route::get('cats/{cat_id}', 'CatController@show');
 Route::get('products/show/{product_id}', 'ProductController@show');
+Route::get('articles/show/{article_id}', 'ArticleController@show');
 
