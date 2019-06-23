@@ -36,15 +36,35 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'article_title' => 'required|max:255',
-            'article_des' => 'required',
-            'article_title_fa' => 'max:255',
-            'article_des_fa' => '',
+        // $validatedData = $request->validate([
+        //     'article_title' => 'required|max:255',
+        //     'article_des' => 'required',
+        //     'article_title_fa' => 'max:255',
+        //     'article_des_fa' => '',
 
+        // ]);
+        // $article = Article::create($validatedData);
+
+        // return redirect('admin/articles')->with('success', 'article is successfully saved');
+
+        $request->validate([
+            'title' => 'required|max:255',
+            'des' => 'required',
+            'title_fa' => 'max:255',
+            'des_fa' => 'required',
+            'image' => 'required|image',
         ]);
-        $article = Article::create($validatedData);
-
+        $image = $request->file('image');
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
+        $form_data = array(
+            'title' => $request->title,
+            'des' => $request->des,
+            'title_fa' => $request->title_fa,
+            'des_fa' => $request->des_fa,
+            'image' => $new_name,
+        );
+        Article::create($form_data);
         return redirect('admin/articles')->with('success', 'article is successfully saved');
     }
 
@@ -56,7 +76,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $artice = Article::find($id);
+        return view('articles.show', compact('article'));
     }
 
     /**
@@ -68,8 +89,7 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::findOrFail($id);
-
-    return view('admin/articles/editarticle', compact('article'));
+        return view('admin/articles/editarticle', compact('article'));
     }
 
     /**
@@ -81,15 +101,48 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'article_title' => 'required|max:255',
-            'article_des' => 'required',
-            'article_title_fa' => 'max:255',
-            'article_des_fa' => '',
+        // $validatedData = $request->validate([
+        //     'article_title' => 'required|max:255',
+        //     'article_des' => 'required',
+        //     'article_title_fa' => 'max:255',
+        //     'article_des_fa' => '',
 
-        ]);
-        Article::whereId($id)->update($validatedData);
+        // ]);
+        // Article::whereId($id)->update($validatedData);
 
+        // return redirect('admin/articles')->with('success', 'article is successfully updated');
+
+
+
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
+        if($image != ''){
+             $request->validate([
+                'title' => 'required|max:255',
+                'des' => 'required',
+                'title_fa' => 'max:255',
+                'des_fa' => '',
+                'image'=>'image',
+            ]);
+            $image_name = rand() . '.' . $image->
+            getClientOriginalExtension();
+            $image->move(public_path('images'), $image_name);
+        }else{
+         $request->validate([
+                'title' => 'required|max:255',
+                'des' => 'required',
+                'title_fa' => 'max:255',
+                'des_fa' => '',
+                ]);
+        }
+        $form_data = array(
+            'title' => $request->title,
+            'des' => $request->des,
+            'title_fa' => $request->title_fa,
+            'des_fa' => $request->des_fa,
+            'image' => $image_name,
+        );
+        Article::whereId($id)->update($form_data);
         return redirect('admin/articles')->with('success', 'article is successfully updated');
     }
 
