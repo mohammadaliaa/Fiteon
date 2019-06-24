@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,9 +9,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::resource('products','ProductController');
-
+Route::get('locale/{locale}',function($locale){
+Session::put('locale',$locale);
+return redirect()->back();
+});
 Route::get('/', function () {
     return view('layouts.welcome');
 });
@@ -20,9 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('admin/posts', function () {
-    return view('admin.posts');
-});
+
 Route::get('articles', function () {
     $articles = \App\Article::all();
     return view('articles.articlesView',compact('articles'));
@@ -45,38 +43,22 @@ Route::get('about', function () {
 Route::get('contact', function () {
     return view('contactusView');
 });
-// Route::get('/projects', function () {
-//     return view('projectsView');
-// });
-Route::get('/page/{lang}', function ($lang) {
-    App::setlocale($lang);
-    return view('page');
-});
-Route::get('setlocale/{locale}',function($lang){
-    \Session::put('locale',$lang);
-    return redirect()->back();
-});
-Route::group(['middleware'=>'language'],function ()
-{
-    //your translation routes
-});
-
 
 // product
-Route::resource('admin/products', 'ProductController');
+Route::resource('admin/products', 'ProductController')->middleware(['auth']);
 // end product
 
 // cats
-Route::resource('admin/cats', 'CatController');
+Route::resource('admin/cats', 'CatController')->middleware(['auth']);
 // end cat
 
 
 //article
-Route::resource('admin/articles', 'ArticleController');
+Route::resource('admin/articles', 'ArticleController')->middleware(['auth']);
 //end article
 
 //project
-Route::resource('admin/projects', 'ProjectController');
+Route::resource('admin/projects', 'ProjectController')->middleware(['auth']);
 //end project
 
 
