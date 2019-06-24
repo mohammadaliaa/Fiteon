@@ -27,4 +27,4 @@
     </div>
 </div>
 <br>
-{{-- @include('layouts.footer') --}}
+@include('layouts.footer')

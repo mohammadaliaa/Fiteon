@@ -31,22 +31,22 @@
         <div class="collapse navbar-collapse " style="    padding-right: 149px;" id="navcol-1">
             <ul class="nav navbar-nav mx-auto">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" href="{{ url('products') }}"><b> Products</b></a>
+                    <a class="nav-link" href="{{ url('products') }}"><b>@lang('msg.products') </b></a>
                 </li>
                 {{-- <li class="nav-item" role="presentation">
                     <a class="nav-link" href="{{ url('services') }}"><b>Services</b></a>
                 </li> --}}
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" href="{{ url('projects') }}"><b>Projects</b></a>
+                    <a class="nav-link" href="{{ url('projects') }}"><b> @lang('msg.projects') </b></a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" href="{{ url('articles') }}"><b>Articles</b></a>
+                    <a class="nav-link" href="{{ url('articles') }}"><b>@lang('msg.articles')</b></a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" href="{{ url('about') }}"><b>About</b></a>
+                    <a class="nav-link" href="{{ url('about') }}"><b> @lang('msg.aboutus')</b></a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" href="{{ url('contact') }}"><b>Contact Us</b></a>
+                    <a class="nav-link" href="{{ url('contact') }}"><b> @lang('msg.contatus')</b></a>
                 </li>
             </ul>
         </div>

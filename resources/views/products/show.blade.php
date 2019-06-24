@@ -4,7 +4,11 @@
         <img class="pimage" src="/images/{{$product->image}}" alt="" />
     </div>
     <br />
-    <h1 class="px-2" class="font-weight-bold">{{ $product->title }}</h1>
+      @if (app()->getLocale()== 'fa')
+      <h1 class="px-2 font-weight-bold text-right" >{{ $product->title_fa }}</h1>
+        @else
+        <h1 class="px-2 font-weight-bold">{{ $product->title }} </h1>
+        @endif
     <br />
     <div class="card middle_box">
         <br />
@@ -13,3 +17,4 @@
         </div>
     </div>
 </div>
+{{-- @include('layouts.footer') --}}

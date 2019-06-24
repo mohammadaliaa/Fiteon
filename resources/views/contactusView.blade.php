@@ -11,5 +11,8 @@
         <div class="px-5">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae praesentium nulla tempore aperiam odit itaque atque error ad quos in, voluptatem quod nesciunt, vel iure. Et dicta deleniti asperiores rerum!
         </div>
+        <br>
     </div>
+
 </div>
+@include('layouts.footer')
