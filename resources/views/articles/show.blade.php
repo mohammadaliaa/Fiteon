@@ -3,14 +3,12 @@
     <div class="text-center">
         <img class="pimage" src="/images/{{$article->image}}" alt="" />
     </div>
-</div>
-<br />
-<h1 class="px10" class="font-weight-bold">{{ $article->title }}</h1>
-<br />
-<div class="">
-    <div class="card" style="margin: auto;border-color: transparent;width: 80%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <br />
+    <h1 class="px-2" class="font-weight-bold">{{ $article->title }}</h1>
+    <br />
+    <div class="card middle_box">
         <br />
-        <div class="px-5">
+        <div class="px-4">
             {!!html_entity_decode($article->des)!!}
         </div>
     </div>

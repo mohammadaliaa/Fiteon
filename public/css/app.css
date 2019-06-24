@@ -10769,8 +10769,8 @@ a.text-dark:focus {
 }
 
 .pimage {
-  width: desired_width;
-  height: 20%;
+  width: 100%;
+  height: 50%;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -10788,5 +10788,11 @@ a.text-dark:focus {
 
 .lists_images {
   width: 150px;
+}
+
+.middle_box {
+  margin: auto;
+  border-color: transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
