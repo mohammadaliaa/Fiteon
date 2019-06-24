@@ -27,6 +27,10 @@ Route::get('articles', function () {
     $articles = \App\Article::all();
     return view('articles.articlesView',compact('articles'));
 });
+Route::get('projects', function () {
+    $projects = \App\Project::all();
+    return view('projects.projectsView',compact('projects'));
+});
 Route::get('services', function () {
     return view('servicesView');
 });
@@ -79,4 +83,5 @@ Route::resource('admin/projects', 'ProjectController');
 Route::get('cats/{cat_id}', 'CatController@show');
 Route::get('products/show/{product_id}', 'ProductController@show');
 Route::get('articles/show/{article_id}', 'ArticleController@show');
+Route::get('projects/show/{project_id}', 'ProjectController@show');
 
