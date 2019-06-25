@@ -11,24 +11,39 @@
             <ul>
                 @foreach ($cats as $cat)
                 <li>
-                    <h3> <a class="nav-link" href="/cats/{{$cat->id}}">  {{$cat->title}}  </a></h3>
+                    <h3>
+                        <a class="nav-link" href="/cats/{{$cat->id}}">
+                            @if (app()->getLocale()== 'fa')
+                            {{$cat->title_fa}}
+                            @else
+                            {{$cat->title}}
+                            @endif
+                        </a>
+                    </h3>
                 </li>
                 @endforeach
             </ul>
         </div>
         <div class="col-md-9">
             <div class="row">
-                    @foreach ($products as $product)
+                @foreach ($products as $product)
                 <div class="col-md-6 mt-3">
                     <div class="card">
                         <img src="/images/{{$product->image}}" height="400vh" class="card-img-top" />
                         <div class="card-body">
-                            <h5 class="card-title"> {{$product->title}}</h5>
-                            <p class="card-text dots" >
-                                    {{-- {!!html_entity_decode($product->des)!!} --}}
+                            @if (app()->getLocale()== 'fa')
+                            <h5 class="card-title text-right">{{$product->title_fa}}</h5>
+                            @else
+                            <h5 class="card-title">{{$product->title}}</h5>
+                            @endif
+
+                            <p class="card-text dots">
+                                {{-- {!!html_entity_decode($product->des)!!} --}}
                             </p>
                             <div class="text-center">
-                            <a href="/products/show/{{$product->id}}" style="text-decoration: none" class="btnlink">Details</a>
+                                <a href="/products/show/{{$product->id}}" style="text-decoration: none" class="btnlink"
+                                    >Details</a
+                                >
                             </div>
                         </div>
                     </div>
@@ -39,5 +54,5 @@
         </div>
     </div>
 </div>
-<br>
+<br />
 @include('layouts.footer')
