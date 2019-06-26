@@ -52,7 +52,6 @@ Route::resource('admin/products', 'ProductController')->middleware(['auth']);
 Route::resource('admin/cats', 'CatController')->middleware(['auth']);
 // end cat
 
-
 //article
 Route::resource('admin/articles', 'ArticleController')->middleware(['auth']);
 //end article

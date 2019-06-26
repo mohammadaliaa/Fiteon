@@ -15,7 +15,6 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-
         return view('admin/products/index', compact('products'));
     }
      /**
@@ -26,7 +25,6 @@ class ProductController extends Controller
     public function create()
     {
         $cats = Cat::all();
-
         return view('admin/products/createproduct',compact('cats'));
     }
 
@@ -70,8 +68,6 @@ class ProductController extends Controller
     public function show($id)
     {
           $product = Product::find($id);
-        //   return View::make('products/show')
-        //       ->with('product', $product);
               return view('products.show', compact('product'));
     }
 

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Fiteon</title>
+        <title>@lang('msg.fiteon')</title>
   @include('layouts.script')
     </head>
     <body>
@@ -28,13 +28,13 @@
                                 <div class="text-center" style="display: inline-flex;">
                                     <a href="#" class="text-dark" style="text-decoration: none">
                                         <div class="lbtn">
-                                            asdsadasd
+                                            test
                                         </div>
                                     </a>
                                     &nbsp; &nbsp; &nbsp;
                                     <a href="#" class="text-white">
                                         <div class="rbtn">
-                                            asdsadasd
+                                            test
                                         </div>
                                     </a>
                                 </div>

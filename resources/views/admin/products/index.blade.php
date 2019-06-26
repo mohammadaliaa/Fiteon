@@ -32,14 +32,20 @@
 
             <td>{{$product->title}} <br> {{$product->title_fa}}  </td>
             <td  > <pre class="dots with_p_prod" >  {!!$product->des!!} </pre>  <br> <pre class="dots with_p_prod" >  {!!html_entity_decode($product->des_fa)!!}</pre>   </td>
-            <td>{{$product->cat->title}}</td>
+            <td>
+                @if ($product->cat)
+                {{$product->cat->title}}
+                @else
+                    Unknown
+                @endif
+              </td>
 
             <td><a href="{{ route('products.edit',$product->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
                 <form action="{{ route('products.destroy', $product->id)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
+                  <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure to delete?')">Delete</button>
                 </form>
             </td>
         </tr>

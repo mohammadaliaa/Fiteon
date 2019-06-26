@@ -6,6 +6,10 @@ return[
     'aboutus'=>'About Us',
     'contatus'=>'Contact Us',
     'articles'=>'Article',
+    'categories'=>'Categories',
+    'fa'=>'Persian',
+    'en'=>'English',
+    'fiteon'=>'Fiteon',
 
 ];
 ?>

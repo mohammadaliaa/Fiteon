@@ -10,6 +10,7 @@
                 @foreach ($projects as $project)
                 <div class="col-md-6 mt-3">
                     <div class="card">
+                        <a href="/projects/show/{{$project->id}}" style="text-decoration: none">
                         <img src="/images/{{$project->image}}" height="400vh" class="card-img-top" />
                         <div class="card-body">
                             @if (app()->getLocale()== 'fa')
@@ -21,19 +22,17 @@
                             <p class="card-text dots">
                                 {{-- {!!html_entity_decode($product->des)!!} --}}
                             </p>
-                            <div class="text-center">
-                                <a href="/projects/show/{{$project->id}}" style="text-decoration: none" class="btnlink"
-                                    >Details</a
-                                >
-                            </div>
-                        </div>
+
+                          </a>
+
                     </div>
                 </div>
-
-                @endforeach
             </div>
+
+            @endforeach
         </div>
+        <br>
     </div>
 </div>
-<br />
-@include('layouts.footer')
+</div>
+<br /> @include('layouts.footer')

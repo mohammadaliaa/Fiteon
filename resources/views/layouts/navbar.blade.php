@@ -24,18 +24,15 @@
 --}}
 <nav class="navbar navbar-light  navbar-expand-md">
     <div class="container-fluid">
-        <a class="navbar-brand " href="{{ url('/') }}"></a>
+        <a style="z-index: 1;" class="navbar-brand " href="{{ url('/') }}"></a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
             <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " style="    padding-right: 149px;" id="navcol-1">
+        <div class="collapse navbar-collapse " style="margin-left: -170px;" id="navcol-1">
             <ul class="nav navbar-nav mx-auto">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" href="{{ url('products') }}"><b>@lang('msg.products') </b></a>
                 </li>
-                {{-- <li class="nav-item" role="presentation">
-                    <a class="nav-link" href="{{ url('services') }}"><b>Services</b></a>
-                </li> --}}
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" href="{{ url('projects') }}"><b> @lang('msg.projects') </b></a>
                 </li>
