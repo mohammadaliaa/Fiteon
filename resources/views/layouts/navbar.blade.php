@@ -28,7 +28,7 @@
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
             <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " style="margin-left: -170px;" id="navcol-1">
+        <div class="collapse navbar-collapse nav_margin"  id="navcol-1">
             <ul class="nav navbar-nav mx-auto">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" href="{{ url('products') }}"><b>@lang('msg.products') </b></a>
