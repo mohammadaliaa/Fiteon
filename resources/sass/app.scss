@@ -1,14 +1,9 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-
-
 .hero-image {
     background-image: url('/images/back.jpeg');
     background-color: #cccccc;
@@ -18,6 +13,7 @@
     background-size: cover;
     position: relative;
 }
+
 .navbar-light .navbar-brand {
     background-image: url('/images/logo.svg');
     background-repeat: no-repeat;
@@ -70,6 +66,7 @@
     text-decoration: none;
     min-width: 200px;
 }
+
 .rbtn:hover {
     border: solid;
     border-radius: 25px;
@@ -108,41 +105,43 @@
     text-align: center;
 }
 
-
-.with_p_prod{
+.with_p_prod {
     max-height: 4rem;
     width: 700px;
     display: flex;
 }
 
-.pimage{
-    width : 100%;
+.pimage {
+    object-fit: cover;
+    width: 100%;
     height: 50%;
-// height: 20rem;
-// width: 90%;
-border-radius: 5px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    // height: 20rem;
+    // width: 90%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.px10{
+.px10 {
     padding-left: 14%;
     padding-right: 14%;
 }
 
 .dots {
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
+}
 
-
-.lists_images{
+.lists_images {
     width: 150px;
 }
 
-
-.middle_box{
-    margin: auto;border-color: transparent;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.middle_box {
+    margin: auto;
+    border-color: transparent;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.card-img-top {
+    object-fit: cover;
+}
