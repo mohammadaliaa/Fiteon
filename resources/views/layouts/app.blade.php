@@ -41,7 +41,9 @@
                         <ul class="navbar-nav mx-3">
                             <a href="{{ url('admin/articles') }}">articles</a>
                         </ul>
-
+                        <ul class="navbar-nav mx-3">
+                                <a href="{{ url('admin/services') }}">services</a>
+                            </ul>
                         @endif
 
                         <!-- Right Side Of Navbar -->
