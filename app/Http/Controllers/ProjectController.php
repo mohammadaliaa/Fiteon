@@ -26,7 +26,6 @@ class ProjectController extends Controller
     public function create()
     {
           $project = Project::all();
-
         return view('admin/projects/createproject',compact('project'));
     }
 
@@ -137,6 +136,5 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
         $project->delete();
         return redirect('admin/projects')->with('success', 'project is successfully deleted');
-
     }
 }
