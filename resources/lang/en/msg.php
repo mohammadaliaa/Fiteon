@@ -10,6 +10,7 @@ return[
     'fa'=>'Persian',
     'en'=>'English',
     'fiteon'=>'Fiteon',
+    'services'=>'Services'
 
 ];
 ?>

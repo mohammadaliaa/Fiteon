@@ -30,7 +30,8 @@ Route::get('projects', function () {
     return view('projects.projectsView',compact('projects'));
 });
 Route::get('services', function () {
-    return view('servicesView');
+    $services = \App\Service::all();
+    return view('services.servicesView',compact('services'));
 });
 Route::get('products', function () {
     $cats = \App\Cat::all();
@@ -59,10 +60,13 @@ Route::resource('admin/articles', 'ArticleController')->middleware(['auth']);
 //project
 Route::resource('admin/projects', 'ProjectController')->middleware(['auth']);
 //end project
-
+//service
+Route::resource('admin/services', 'ServiceController')->middleware(['auth']);
+//end service
 
 Route::get('cats/{cat_id}', 'CatController@show');
 Route::get('products/show/{product_id}', 'ProductController@show');
 Route::get('articles/show/{article_id}', 'ArticleController@show');
 Route::get('projects/show/{project_id}', 'ProjectController@show');
+Route::get('services/show/{service_id}', 'ServiceController@show');
 

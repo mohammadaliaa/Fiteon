@@ -10662,13 +10662,9 @@ a.text-dark:focus {
   }
 }
 
-.hero-image {
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-image: url("/images/back.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
+html,
+body {
+  height: 100%;
 }
 
 .navbar-light .navbar-brand {
@@ -10802,31 +10798,37 @@ a.text-dark:focus {
      object-fit: cover;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   .nav_margin {
-    margin-left: -170px;
+    margin-left: -154px;
   }
 
   .hero-image {
     width: 100%;
-    height: 100vh;
-    background-position: center;
     background-image: url("/images/back.jpeg");
+    height: 100%;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .hero-image {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: 120vh;
-    background-position: center;
+    display: inline-table;
+    width: 100%;
+    height: 120%;
     background-image: url("/images/back.jpeg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto 100%;
+    background-position: center top;
+  }
+
+  .nav {
+    background: #ffffff36;
+    padding: 5px;
+    border-radius: 3px;
   }
 }
 
