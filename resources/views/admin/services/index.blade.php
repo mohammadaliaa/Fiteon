@@ -30,10 +30,8 @@
         @foreach($services as $service)
         <tr>
         <td><img src="{{URL::to('/') }}/images/{{ $service->image }}" class="img-thumbnail lists_images"></td>
-
             <td>{{$service->title}} <br> {{$service->title_fa}}  </td>
             <td>  <pre class="dots with_p_prod"> {!!$service->des!!}</pre>   <br> <pre class="dots with_p_prod"> {!!$service->des_fa!!} </pre>  </td>
-
             <td><a href="{{ route('services.edit',$service->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
                 <form action="{{ route('services.destroy', $service->id)}}" method="post">
