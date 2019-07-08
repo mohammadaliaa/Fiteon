@@ -44,6 +44,11 @@
                         <ul class="navbar-nav mx-3">
                                 <a href="{{ url('admin/services') }}">services</a>
                             </ul>
+
+                            <ul class="navbar-nav mx-3">
+                                <a href="{{ url('admin/infos')}}">info</a>
+                            </ul>
+
                         @endif
 
                         <!-- Right Side Of Navbar -->

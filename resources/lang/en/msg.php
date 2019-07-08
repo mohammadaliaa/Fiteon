@@ -10,7 +10,12 @@ return[
     'fa'=>'Persian',
     'en'=>'English',
     'fiteon'=>'Fiteon',
-    'services'=>'Services'
+    'services'=>'Services',
+    'phone'=>'phone',
+    'mobile'=>'mobile',
+    'email'=>'email',
+    'address'=>'address',
+    'fax'=>'fax',
 
 ];
 ?>

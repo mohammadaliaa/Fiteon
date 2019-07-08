@@ -14,7 +14,8 @@ Session::put('locale',$locale);
 return redirect()->back();
 });
 Route::get('/', function () {
-    return view('layouts.welcome');
+    $infos = \App\Info::all();
+    return view('layouts.welcome', compact( 'infos'));
 });
 
 Auth::routes();
@@ -42,27 +43,23 @@ Route::get('about', function () {
     return view('aboutusView');
 });
 Route::get('contact', function () {
-    return view('contactusView');
+    $infos = \App\Info::all();
+    return view('contactusView', compact( 'infos'));
 });
 
 // product
 Route::resource('admin/products', 'ProductController')->middleware(['auth']);
-// end product
 
 // cats
 Route::resource('admin/cats', 'CatController')->middleware(['auth']);
-// end cat
-
 //article
 Route::resource('admin/articles', 'ArticleController')->middleware(['auth']);
-//end article
-
 //project
 Route::resource('admin/projects', 'ProjectController')->middleware(['auth']);
-//end project
 //service
 Route::resource('admin/services', 'ServiceController')->middleware(['auth']);
-//end service
+//info
+Route::resource('admin/infos', 'InfoController')->middleware(['auth']);
 
 Route::get('cats/{cat_id}', 'CatController@show');
 Route::get('products/show/{product_id}', 'ProductController@show');
