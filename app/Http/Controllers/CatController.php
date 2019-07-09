@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cat;
 use App\Product;
+use App\Info;
 class CatController extends Controller
 {
     /**
@@ -59,6 +60,7 @@ class CatController extends Controller
     public function show($cat_id)
     {
         $cats = Cat::all();
+        $infos = Info::all();
         $products;
         if ($cat_id == null){
             $products = Product::all();
@@ -66,7 +68,7 @@ class CatController extends Controller
         }else{
             $products = Cat::find($cat_id)->products;
         }
-        return view('products.productsView', compact('cats','products'));
+        return view('products.productsView', compact('cats','products','infos'));
     }
 
     /**

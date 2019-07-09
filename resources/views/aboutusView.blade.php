@@ -15,7 +15,7 @@
     >
         <br />
         @if (app()->getLocale()== 'fa')
-        <div class="px-5 text-right">
+        <div class="px-5 text-right dir_r">
             لورم ایپسام
         </div>
         @else
@@ -27,5 +27,6 @@
 
         <br />
     </div>
+    <br> <br>
 </div>
 @include('layouts.footer')

@@ -14,7 +14,7 @@
     <div class="card middle_box">
         <br />
         @if (app()->getLocale()== 'fa')
-        <div class="px-4 text-right">
+        <div class="px-4 text-right dir_r">
             {!!html_entity_decode($service->des_fa)!!}
         </div>
         @else
@@ -23,5 +23,6 @@
         </div>
         @endif
     </div>
+    <br> <br>
 </div>
 @include('layouts.footer')

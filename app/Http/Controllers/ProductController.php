@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Product;
 use App\Cat;
+use App\Info;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -68,7 +69,8 @@ class ProductController extends Controller
     public function show($id)
     {
           $product = Product::find($id);
-              return view('products.show', compact('product'));
+          $infos = Info::all();
+              return view('products.show', compact('product','infos'));
     }
 
     /**

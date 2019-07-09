@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Info;
 class ArticleController extends Controller
 {
     /**
@@ -75,9 +76,9 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    { $infos = Info::all();
         $article = Article::find($id);
-        return view('articles.show', compact('article'));
+        return view('articles.show', compact('article','infos'));
     }
 
     /**

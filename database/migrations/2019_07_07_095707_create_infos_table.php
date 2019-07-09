@@ -20,7 +20,8 @@ class CreateInfosTable extends Migration
             $table->string('email');
             $table->string('mobile');
             $table->string('fax');
-            $table->string('location');
+            $table->string('lat');
+            $table->string('lng');
             $table->string('address_1');
             $table->string('address_2')->nullable();
             $table->string('address_3')->nullable();

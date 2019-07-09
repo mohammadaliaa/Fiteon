@@ -181,7 +181,7 @@ body {
         background-position: center top;
     }
     .nav {
-        background: #ffffff36;
+        background: #ffffffa6;
         padding: 5px;
         border-radius: 3px;
     }
@@ -189,6 +189,10 @@ body {
 
 .nav-link {
     color: black !important;
+}
+
+.dir_r {
+    direction: rtl;
 }
 
 @media screen and (min-width: 768px) and (max-width: 790px) {}

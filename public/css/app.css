@@ -10826,7 +10826,7 @@ body {
   }
 
   .nav {
-    background: #ffffff36;
+    background: #ffffffa6;
     padding: 5px;
     border-radius: 3px;
   }
@@ -10834,5 +10834,9 @@ body {
 
 .nav-link {
   color: black !important;
+}
+
+.dir_r {
+  direction: rtl;
 }
 

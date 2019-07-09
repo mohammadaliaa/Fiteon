@@ -24,28 +24,35 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('articles', function () {
     $articles = \App\Article::all();
-    return view('articles.articlesView',compact('articles'));
+    $infos = \App\Info::all();
+    return view('articles.articlesView',compact('articles','infos'));
 });
 Route::get('projects', function () {
     $projects = \App\Project::all();
-    return view('projects.projectsView',compact('projects'));
+    $infos = \App\Info::all();
+    return view('projects.projectsView',compact('projects','infos'));
 });
 Route::get('services', function () {
     $services = \App\Service::all();
-    return view('services.servicesView',compact('services'));
+    $infos = \App\Info::all();
+    return view('services.servicesView',compact('services','infos'));
 });
 Route::get('products', function () {
     $cats = \App\Cat::all();
     $products = \App\Product::all();
-    return view('products.productsView', compact('cats', 'products'));
+    $infos = \App\Info::all();
+    return view('products.productsView', compact('cats', 'products','infos'));
 });
 Route::get('about', function () {
-    return view('aboutusView');
+    $infos = \App\Info::all();
+    return view('aboutusView', compact('infos'));
 });
 Route::get('contact', function () {
     $infos = \App\Info::all();
     return view('contactusView', compact( 'infos'));
 });
+
+
 
 // product
 Route::resource('admin/products', 'ProductController')->middleware(['auth']);
