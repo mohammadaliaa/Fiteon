@@ -73,6 +73,10 @@
                     </h5>
                 </div>
             </div>
+            <div class="form-group">
+                {{-- <label for="name">Map:</label> --}}
+                <div id="map"></div>
+            </div>
             @endif @endforeach
         </div>
         @else
