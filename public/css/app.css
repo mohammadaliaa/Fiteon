@@ -10746,6 +10746,20 @@ body {
   min-width: 200px;
 }
 
+.lbtn:hover {
+  text-decoration: none;
+  border: solid;
+  border-radius: 25px;
+  padding: 8px;
+  border-width: 3px;
+  font-size: small;
+  background-color: #ffffffe0;
+  border-color: white;
+  text-decoration: none;
+  font-weight: bold;
+  min-width: 200px;
+}
+
 .ftr {
   position: fixed;
   left: 0;
@@ -10838,5 +10852,9 @@ body {
 
 .dir_r {
   direction: rtl;
+}
+
+.nav-link:hover {
+  color: #313131e8 !important;
 }
 
