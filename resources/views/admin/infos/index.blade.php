@@ -35,10 +35,16 @@
             <td>{{$info->location}} </td><br>
             <td>address</td>:
             <td>{{$info->address_1}} </td><br>
-            <td>address</td>:
+            <td>{{$info->address_1_fa}} </td><br>
+            <td>address 2</td>:
             <td>{{$info->address_2}} </td><br>
-            <td>address</td>:
+            <td>{{$info->address_2_fa}} </td><br>
+            <td>address 3</td>:
             <td>{{$info->address_3}} </td><br>
+            <td>{{$info->address_3_fa}} </td><br>
+            <td>about us</td>:
+            <td>{!!$info->aboutus!!} </td><br>
+            <td>{!!$info->aboutus_fa!!} </td><br>
             <td><a href="{{ route('infos.edit',$info->id)}}" class="btn btn-primary">Edit</a></td>
         </tr>
     </div>

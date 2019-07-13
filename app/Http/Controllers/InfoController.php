@@ -47,8 +47,13 @@ class InfoController extends Controller
             'lat' => '',
             'lng' => '',
             'address_1' => '',
+            'address_1_fa' => '',
             'address_2' => '',
+            'address_2_fa' => '',
             'address_3' => '',
+            'address_3_fa' => '',
+            'aboutus' => '',
+            'aboutus_fa' => '',
             ]);
 
             $form_data = array(
@@ -59,8 +64,13 @@ class InfoController extends Controller
                 'lat' => $request->lat,
                 'lng' => $request->lng,
                 'address_1' => $request->address_1,
+                'address_1_fa' => $request->address_1_fa,
                 'address_2' => $request->address_2,
+                'address_2_fa' => $request->address_2_fa,
                 'address_3' => $request->address_3,
+                'address_3_fa' => $request->address_3_fa,
+                'aboutus' => $request->aboutus,
+                'aboutus_fa' => $request->aboutus_fa,
 
             );
         Info::create($form_data);
@@ -108,8 +118,13 @@ class InfoController extends Controller
                 'lat' => '',
                 'lng' => '',
                 'address_1' => '',
+                'address_1_fa' => '',
                 'address_2' => '',
+                'address_2_fa' => '',
                 'address_3' => '',
+                'address_3_fa' => '',
+                'aboutus' => '',
+                'aboutus_fa' => '',
                 ]);
 
                 $form_data = array(
@@ -120,8 +135,13 @@ class InfoController extends Controller
                     'lat' => $request->lat,
                     'lng' => $request->lng,
                     'address_1' => $request->address_1,
+                    'address_1_fa' => $request->address_1_fa,
                     'address_2' => $request->address_2,
+                    'address_2_fa' => $request->address_2_fa,
                     'address_3' => $request->address_3,
+                    'address_3_fa' => $request->address_3_fa,
+                    'aboutus' => $request->aboutus,
+                    'aboutus_fa' => $request->aboutus_fa,
 
                 );
         Info::whereId($id)->update($form_data);

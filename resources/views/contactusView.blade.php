@@ -1,4 +1,3 @@
-
 @include('layouts.script') @include('layouts.navbar')
 <div class="container"></div>
 <br /> @if (app()->getLocale()== 'fa')
@@ -7,11 +6,10 @@
 <h1 class="px10 font-weight-bold">Contact us</h1>
 @endif
 <style>
-
-#map{
-    width: 100%;
-    height: 350px;
-}
+    #map {
+        width: 100%;
+        height: 350px;
+    }
 </style>
 <br />
 <div class="">
@@ -51,25 +49,25 @@
                 <div class="col-md-6" style="display: inline-flex;">
                     @lang('msg.address') &nbsp;
                     <h5>
-                        <b> {{$info->address_1}}</b>
+                        <b> {{$info->address_1_fa}}</b>
                     </h5>
                 </div>
             </div>
-            @if ($info->address_2)
+            @if ($info->address_2_fa)
             <div class="row">
                 <div class="col-md-6" style="display: inline-flex;">
                     @lang('msg.address') &nbsp;
                     <h5>
-                        <b> {{$info->address_2}}</b>
+                        <b> {{$info->address_2_fa}}</b>
                     </h5>
                 </div>
             </div>
-            @endif @if ($info->address_3)
+            @endif @if ($info->address_3_fa)
             <div class="row">
                 <div class="col-md-6" style="display: inline-flex;">
                     @lang('msg.address') &nbsp;
                     <h5>
-                        <b> {{$info->address_3}}</b>
+                        <b> {{$info->address_3_fa}}</b>
                     </h5>
                 </div>
             </div>
@@ -149,36 +147,44 @@
 
         <br />
     </div>
-    <br> <br>
+    <br />
+    <br />
 </div>
 @include('layouts.footer')
 
-
 <script>
     function initMap() {
-       var map = new google.maps.Map(document.getElementById('map'), {
-       zoom: 8,
-       center: new google.maps.LatLng(33.744879, 52.836914),
-       mapTypeId: google.maps.MapTypeId.ROADMAP
-   });
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: new google.maps.LatLng(33.744879, 52.836914),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
 
-   var myMarker = new google.maps.Marker({
-       position: new google.maps.LatLng({{$info->lat}}, {{$info->lng}}),
+        var myMarker = new google.maps.Marker({
+            position: new google.maps.LatLng({
+                {
+                    $info - > lat
+                }
+            }, {
+                {
+                    $info - > lng
+                }
+            }),
 
-   });
+        });
 
-//    google.maps.event.addListener(myMarker, 'dragend', function (evt) {
-//        document.getElementById('current').innerHTML = '<p>Marker dropped:  Lat: ' + evt.latLng.lat().toFixed(3) + '  Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
-//        document.getElementById("lat").value = evt.latLng.lat().toFixed(3);
-//        document.getElementById("lng").value = evt.latLng.lng().toFixed(3);
-//    });
+        //    google.maps.event.addListener(myMarker, 'dragend', function (evt) {
+        //        document.getElementById('current').innerHTML = '<p>Marker dropped:  Lat: ' + evt.latLng.lat().toFixed(3) + '  Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
+        //        document.getElementById("lat").value = evt.latLng.lat().toFixed(3);
+        //        document.getElementById("lng").value = evt.latLng.lng().toFixed(3);
+        //    });
 
-//    google.maps.event.addListener(myMarker, 'dragstart', function (evt) {
-//        document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
-//    });
+        //    google.maps.event.addListener(myMarker, 'dragstart', function (evt) {
+        //        document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
+        //    });
 
-   map.setCenter(myMarker.position);
-   myMarker.setMap(map);
+        map.setCenter(myMarker.position);
+        myMarker.setMap(map);
 
     }
-               </script>
+</script>
