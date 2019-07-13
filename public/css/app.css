@@ -10858,3 +10858,9 @@ body {
   color: #313131e8 !important;
 }
 
+.text_shadow {
+  background-color: #ececec80;
+  border-radius: 10px;
+  padding: 10px;
+}
+

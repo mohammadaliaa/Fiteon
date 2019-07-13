@@ -18,7 +18,7 @@
                                 background-color: transparent ;
                                 min-width: 450px; border-color: transparent">
                     <div class="card-body text-center">
-                        <h1 class="text-white" ><b style="background-color: #ececec80; border-radius: 10px;padding: 10px;color: white">@lang('msg.fiteon') </b></h1>
+                        <h1 class="text-white" ><b class="text_shadow">@lang('msg.fiteon') </b></h1>
                         <br />
                         <div class="text-center" style="display: inline-flex;">
                             <a href="http://fitcrete.com/" class="text-dark" style="text-decoration: none">

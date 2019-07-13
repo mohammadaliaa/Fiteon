@@ -1,6 +1,13 @@
 @include('layouts.script')
 <div class="header pheader">
     @include('layouts.navbar')
+    <br>
+    <div class="container ">
+        <div style="margin: auto;width: 16%;min-width: 163px;">
+                <h1 class="text-center text_shadow">@lang('msg.products')</h1>
+        </div>
+    </div>
+
 </div>
 <br />
 <div class="container-fluid">

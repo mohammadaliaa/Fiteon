@@ -2,7 +2,7 @@
 return[
     'welcome'=>'welcome everyone else',
     'products'=>'Products',
-    'projects'=>'Project',
+    'projects'=>'Projects',
     'aboutus'=>'About Us',
     'contatus'=>'Contact Us',
     'articles'=>'Articles',
@@ -16,6 +16,5 @@ return[
     'email'=>'email',
     'address'=>'address',
     'fax'=>'fax',
-
 ];
 ?>
