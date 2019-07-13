@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('articles', function () {
-    $articles = \App\Article::all();
+    $articles = \App\Article::paginate(10);
     $infos = \App\Info::all();
     return view('articles.articlesView',compact('articles','infos'));
 });

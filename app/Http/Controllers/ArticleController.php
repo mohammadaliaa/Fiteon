@@ -37,16 +37,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        // $validatedData = $request->validate([
-        //     'article_title' => 'required|max:255',
-        //     'article_des' => 'required',
-        //     'article_title_fa' => 'max:255',
-        //     'article_des_fa' => '',
 
-        // ]);
-        // $article = Article::create($validatedData);
-
-        // return redirect('admin/articles')->with('success', 'article is successfully saved');
 
         $request->validate([
             'title' => 'required|max:255',
@@ -102,19 +93,6 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $validatedData = $request->validate([
-        //     'article_title' => 'required|max:255',
-        //     'article_des' => 'required',
-        //     'article_title_fa' => 'max:255',
-        //     'article_des_fa' => '',
-
-        // ]);
-        // Article::whereId($id)->update($validatedData);
-
-        // return redirect('admin/articles')->with('success', 'article is successfully updated');
-
-
-
         $image_name = $request->hidden_image;
         $image = $request->file('image');
         if($image != ''){
