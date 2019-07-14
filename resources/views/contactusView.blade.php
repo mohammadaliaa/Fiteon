@@ -71,11 +71,13 @@
                     </h5>
                 </div>
             </div>
+
+            @endif
             <div class="form-group">
                 {{-- <label for="name">Map:</label> --}}
                 <div id="map"></div>
             </div>
-            @endif @endforeach
+            @endforeach
         </div>
         @else
         <div class="px-5">
@@ -137,11 +139,13 @@
                 </div>
             </div>
 
+
+            @endif
             <div class="form-group">
                 {{-- <label for="name">Map:</label> --}}
                 <div id="map"></div>
             </div>
-            @endif @endforeach
+            @endforeach
         </div>
         @endif
 
@@ -161,15 +165,7 @@
         });
 
         var myMarker = new google.maps.Marker({
-            position: new google.maps.LatLng({
-                {
-                    $info - > lat
-                }
-            }, {
-                {
-                    $info - > lng
-                }
-            }),
+            position: new google.maps.LatLng({{$info -> lat}}, {{$info -> lng}}),
 
         });
 
